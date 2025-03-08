@@ -1,0 +1,11 @@
+<nb-alert
+  [status]="status"
+  [outline]="outline"
+  [accent]="accent"
+  [size]="size"
+  [closable]="closable"
+  (close)="onClose()">
+  <nb-icon *ngIf="icon" [icon]="icon" class="alert-icon"></nb-icon>
+  <span class="alert-message">{{ message }}</span>
+  <ng-content></ng-content>
+</nb-alert>

@@ -1,0 +1,14 @@
+<button nbButton
+  [status]="status"
+  [size]="size"
+  [shape]="shape"
+  [appearance]="appearance"
+  [fullWidth]="fullWidth"
+  [disabled]="disabled || loading"
+  (click)="onClick($event)">
+  
+  <nb-icon *ngIf="icon && !loading" [icon]="icon"></nb-icon>
+  <nb-spinner *ngIf="loading" size="small" status="basic"></nb-spinner>
+  <span *ngIf="text" [class.ml-2]="icon && !loading || loading">{{ text }}</span>
+  <ng-content></ng-content>
+</button>

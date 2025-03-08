@@ -1,0 +1,4 @@
+<div [class.full-page-overlay]="fullPage" class="loading-container">
+    <nb-spinner [size]="size" [status]="status"></nb-spinner>
+    <span *ngIf="message" class="loading-message">{{ message }}</span>
+  </div>

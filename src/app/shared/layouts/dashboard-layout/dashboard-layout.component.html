@@ -1,0 +1,19 @@
+<nb-layout>
+    <nb-layout-header fixed>
+      <app-header></app-header>
+    </nb-layout-header>
+  
+    <nb-sidebar>
+      <app-sidebar [menuItems]="menuItems"></app-sidebar>
+    </nb-sidebar>
+  
+    <nb-layout-column>
+      <router-outlet></router-outlet>
+    </nb-layout-column>
+  
+    <nb-layout-footer fixed>
+      <div class="footer-container">
+        <span>&copy; 2025 Mi Aplicación. Todos los derechos reservados.</span>
+      </div>
+    </nb-layout-footer>
+  </nb-layout>

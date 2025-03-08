@@ -1,0 +1,13 @@
+<nb-card [status]="status" [accent]="accent" [size]="size">
+    <nb-card-header *ngIf="title">
+      <h2>{{ title }}</h2>
+      <h3 *ngIf="subtitle">{{ subtitle }}</h3>
+    </nb-card-header>
+    <nb-card-body>
+      <ng-content></ng-content>
+    </nb-card-body>
+    <nb-card-footer *ngIf="hasFooter">
+      <ng-content select="[card-footer]"></ng-content>
+    </nb-card-footer>
+  </nb-card>
+  

@@ -1,0 +1,14 @@
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1rem 0;
+    
+    .user-container {
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }

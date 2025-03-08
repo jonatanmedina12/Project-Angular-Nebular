@@ -1,0 +1,49 @@
+// statistics-card.component.scss
+:host {
+    display: block;
+    width: 100%;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .title {
+      font-weight: 500;
+      font-size: 1rem;
+    }
+  }
+  
+  .value-container {
+    display: flex;
+    flex-direction: column;
+    
+    .value {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .trend-container {
+      display: flex;
+      align-items: center;
+      font-size: 0.875rem;
+      
+      nb-icon {
+        margin-right: 0.25rem;
+      }
+      
+      &.trend-up {
+        color: var(--color-success-500, #00d68f);
+      }
+      
+      &.trend-down {
+        color: var(--color-danger-500, #ff3d71);
+      }
+      
+      &.trend-stable {
+        color: var(--color-basic-600, #8f9bb3);
+      }
+    }
+  }
