@@ -1,0 +1,18 @@
+<!-- statistics-card.component.html -->
+<nb-card [status]="status">
+  <nb-card-header>
+    <div class="header-container">
+      <span class="title">{{ title }}</span>
+      <nb-icon [icon]="icon"></nb-icon>
+    </div>
+  </nb-card-header>
+  <nb-card-body>
+    <div class="value-container">
+      <span class="value">{{ value }}</span>
+      <div class="trend-container" [ngClass]="getTrendClass()">
+        <nb-icon [icon]="getTrendIcon()"></nb-icon>
+        <span class="percentage">{{ percentage }}%</span>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

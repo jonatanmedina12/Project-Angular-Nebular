@@ -1,0 +1,57 @@
+<app-generic-card
+  title="Iniciar sesión"
+  subtitle="Introduce tus credenciales para acceder"
+  status="primary"
+  size="medium">
+  
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <app-generic-alert 
+      *ngIf="errorMessage"
+      [message]="errorMessage"
+      status="danger"
+      icon="alert-circle-outline"
+      [closable]="stado"
+      class="mb-4">
+    </app-generic-alert>
+    
+    <app-generic-input
+      label="Email"
+      placeholder="Introduce tu email"
+      type="email"
+      icon="email-outline"
+      [required]="true"
+      [errorMessage]="emailErrors"
+      formControlName="email">
+    </app-generic-input>
+    
+    <app-generic-input
+      label="Contraseña"
+      placeholder="Introduce tu contraseña"
+      type="password"
+      icon="lock-outline"
+      [required]="true"
+      [errorMessage]="passwordErrors"
+      formControlName="password">
+    </app-generic-input>
+    
+    <div class="form-control-row">
+      <nb-checkbox formControlName="rememberMe">Recordarme</nb-checkbox>
+      <a routerLink="/auth/forgot-password" class="forgot-password-link">¿Olvidaste tu contraseña?</a>
+    </div>
+    
+    <div class="form-actions">
+      <app-generic-button
+        text="Iniciar sesión"
+        status="primary"
+        [fullWidth]="true"
+        [loading]="isLoading"
+        [disabled]="loginForm.invalid || isLoading">
+      </app-generic-button>
+    </div>
+    
+    <div class="auth-footer">
+      <span>¿No tienes cuenta?</span>
+      <a routerLink="/auth/register">Regístrate</a>
+    </div>
+  </form>
+</app-generic-card>

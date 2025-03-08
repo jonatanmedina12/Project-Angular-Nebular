@@ -1,0 +1,34 @@
+<!-- dashboard-home.component.html -->
+<div class="dashboard-container">
+  <h1 class="page-title">Dashboard</h1>
+  
+  <div class="statistics-row">
+    <div *ngFor="let stat of statistics" class="stat-card-wrapper">
+      <app-statistics-card 
+        [title]="stat.title"
+        [value]="stat.value"
+        [icon]="stat.icon"
+        [status]="stat.status"
+        [trend]="stat.trend"
+        [percentage]="stat.percentage">
+      </app-statistics-card>
+    </div>
+  </div>
+  
+  <div class="content-row">
+    <div class="main-content">
+      <app-generic-card
+        title="Resumen de Actividad"
+        status="primary">
+        <div class="chart-placeholder">
+          <!-- Aquí iría un componente de gráfico real -->
+          <div class="placeholder-text">Gráfico de actividad</div>
+        </div>
+      </app-generic-card>
+    </div>
+    
+    <div class="side-content">
+      <app-recent-activity [activities]="recentActivities"></app-recent-activity>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<!-- generic-input.component.html -->
+<nb-form-field>
+    <!-- Use [attr.required] instead of [required] for nebular label -->
+    <label *ngIf="label" nbLabel [attr.required]="required">{{ label }}</label>
+    
+    <nb-icon *ngIf="icon && iconPosition === 'left'" [icon]="icon" nbPrefix></nb-icon>
+    
+    <input
+      nbInput
+      [type]="getInputType()"
+      [formControl]="inputControl"
+      [placeholder]="placeholder"
+      [status]="status"
+      [disabled]="disabled"
+      [fieldSize]="fieldSize"
+      (blur)="onBlur()"
+    />
+    
+    <nb-icon 
+      *ngIf="type === 'password'" 
+      [icon]="showPassword ? 'eye-outline' : 'eye-off-outline'"
+      nbSuffix
+      (click)="toggleShowPassword()"
+      class="password-toggle">
+    </nb-icon>
+    
+    <nb-icon *ngIf="icon && iconPosition === 'right'" [icon]="icon" nbSuffix></nb-icon>
+    
+    <span *ngIf="errorMessage" class="error-message" nbSuffix>{{ errorMessage }}</span>
+    <span *ngIf="hintMessage && !errorMessage" class="hint-message">{{ hintMessage }}</span>
+  </nb-form-field>

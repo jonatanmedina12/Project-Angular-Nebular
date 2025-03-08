@@ -1,0 +1,33 @@
+<!-- recent-activity.component.html -->
+<app-generic-card
+  title="Actividad Reciente"
+  status="primary">
+  <!-- Cambiado de "basic" a "primary" para que coincida con los tipos aceptados -->
+  
+  <nb-list>
+    <nb-list-item *ngFor="let activity of activities">
+      <div class="activity-item">
+        <div class="activity-icon" [ngClass]="'color-' + activity.color">
+          <nb-icon [icon]="activity.icon"></nb-icon>
+        </div>
+        <div class="activity-content">
+          <div class="activity-title">
+            <span class="user-name">{{ activity.user }}</span>
+            <span>{{ activity.action }}</span>
+          </div>
+          <div class="activity-time">{{ activity.time }}</div>
+        </div>
+      </div>
+    </nb-list-item>
+  </nb-list>
+  
+  <div card-footer>
+    <app-generic-button
+      text="Ver todas las actividades"
+      icon="arrow-forward-outline"
+      status="basic"
+      appearance="ghost"
+      [fullWidth]="true">
+    </app-generic-button>
+  </div>
+</app-generic-card>

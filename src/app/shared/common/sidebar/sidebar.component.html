@@ -1,0 +1,12 @@
+<div class="sidebar-container">
+    <div class="user-container">
+      <nb-user 
+        [name]="getUserName()"
+        [title]="getUserRole()"
+        [picture]="'assets/images/avatar.png'"
+        size="large">
+      </nb-user>
+    </div>
+    
+    <nb-menu [items]="menuItems"></nb-menu>
+  </div>
